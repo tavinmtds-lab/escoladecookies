@@ -1,0 +1,112 @@
+{
+  "placeholderImages": [
+    {
+      "id": "hero-woman-desktop",
+      "description": "Woman smiling holding a box of delicious cookies",
+      "imageUrl": "https://i.imgur.com/ttAv0Gt.png",
+      "imageHint": "cookies box"
+    },
+    {
+      "id": "hero-woman-mobile",
+      "description": "Woman holding a delicious cookie",
+      "imageUrl": "https://i.imgur.com/PjlIDlI.png",
+      "imageHint": "woman cookie"
+    },
+    {
+      "id": "gallery-1",
+      "description": "Cookie with strawberry and chocolate",
+      "imageUrl": "https://i.imgur.com/feRiW08.jpeg",
+      "imageHint": "strawberry cookie"
+    },
+    {
+      "id": "gallery-2",
+      "description": "Cookie with strawberry filling",
+      "imageUrl": "https://i.imgur.com/t7ykqSG.jpeg",
+      "imageHint": "strawberry cookie"
+    },
+    {
+      "id": "gallery-3",
+      "description": "Cookie with honey and cinnamon glaze",
+      "imageUrl": "https://i.imgur.com/vdoEeTV.jpeg",
+      "imageHint": "cinnamon cookie"
+    },
+    {
+      "id": "gallery-4",
+      "description": "Creamy chocolate cookie",
+      "imageUrl": "https://i.imgur.com/pfczDkX.jpeg",
+      "imageHint": "chocolate cookie"
+    },
+    {
+      "id": "gallery-5",
+      "description": "Colorful party cookie",
+      "imageUrl": "https://i.imgur.com/gOH2lwN.jpeg",
+      "imageHint": "colorful cookie"
+    },
+    {
+      "id": "gallery-6",
+      "description": "Snowy coconut cookie",
+      "imageUrl": "https://i.imgur.com/IxONuAF.jpeg",
+      "imageHint": "coconut cookie"
+    },
+    {
+      "id": "gallery-7",
+      "description": "Sicilian lemon cookie",
+      "imageUrl": "https://i.imgur.com/ziuSjkE.jpeg",
+      "imageHint": "lemon cookie"
+    },
+    {
+      "id": "gallery-8",
+      "description": "Glazed cookie",
+      "imageUrl": "https://i.imgur.com/21ckQML.png",
+      "imageHint": "glazed cookie"
+    },
+    {
+      "id": "gallery-9",
+      "description": "Cookie with sprinkles",
+      "imageUrl": "https://i.imgur.com/60zw95X.png",
+      "imageHint": "cookie sprinkles"
+    },
+    {
+      "id": "gallery-10",
+      "description": "Assortment of cookies",
+      "imageUrl": "https://i.imgur.com/LtdTYsg.png",
+      "imageHint": "cookies assortment"
+    },
+    {
+      "id": "gallery-11",
+      "description": "Cookie with chocolate frosting",
+      "imageUrl": "https://i.imgur.com/4jUt8VQ.png",
+      "imageHint": "chocolate cookie"
+    },
+    {
+      "id": "video-thumbnail",
+      "description": "Cartoon of a cookie with a chef hat",
+      "imageUrl": "https://i.imgur.com/SZtG6rR.png",
+      "imageHint": "cookie cartoon"
+    },
+    {
+      "id": "testimonial-1",
+      "description": "Testimonial screenshot 1",
+      "imageUrl": "https://i.imgur.com/Iy4dnCq.png",
+      "imageHint": "testimonial social"
+    },
+    {
+      "id": "testimonial-2",
+      "description": "Testimonial screenshot 2",
+      "imageUrl": "https://i.imgur.com/1Q6kP86.png",
+      "imageHint": "testimonial social"
+    },
+    {
+      "id": "testimonial-3",
+      "description": "Testimonial screenshot 3",
+      "imageUrl": "https://i.imgur.com/pYT5CQY.png",
+      "imageHint": "testimonial social"
+    },
+    {
+      "id": "features-image",
+      "description": "Animated GIF showing the course platform on a tablet",
+      "imageUrl": "https://i.imgur.com/6igV0xc.gif",
+      "imageHint": "course platform gif"
+    }
+  ]
+}
