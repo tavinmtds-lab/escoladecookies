@@ -75,7 +75,7 @@ export function Pricing() {
                 ))}
                 </ul>
             </div>
-            <Link
+            <a
                 href="https://pay.cakto.com.br/3eb7gb5_662452"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -86,7 +86,7 @@ export function Pricing() {
                 >
                 <Star className="mr-2 h-5 w-5" />
                 QUERO ACESSO VITALÍCIO
-            </Link>
+            </a>
           </CardContent>
           <CardFooter className="flex-col gap-2 px-6 pb-6">
             <Image
