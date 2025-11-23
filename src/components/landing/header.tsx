@@ -2,44 +2,47 @@
 'use client';
 import { useState, useEffect } from 'react';
 
-// Moved targetDate inside useEffect to ensure it's only created on the client
-// and avoids hydration issues.
-
-function calculateTimeLeft(targetDate: Date) {
-  const now = new Date();
-  const difference = +targetDate - +now;
+const calculateTimeLeft = (targetDate: Date) => {
+  const difference = +targetDate - +new Date();
+  let timeLeft = {
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  };
 
   if (difference > 0) {
-    return {
+    timeLeft = {
       days: Math.floor(difference / (1000 * 60 * 60 * 24)),
       hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
       minutes: Math.floor((difference / 1000 / 60) % 60),
       seconds: Math.floor((difference / 1000) % 60),
     };
   }
-  return { days: 0, hours: 0, minutes: 0, seconds: 0 };
-}
+
+  return timeLeft;
+};
 
 export function Header() {
+  const [targetDate] = useState(new Date('2024-11-27T23:59:59'));
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    // This now runs only on the client
+    // Set isClient to true to indicate we are on the client side
     setIsClient(true);
-    const targetDate = new Date('2024-11-27T23:59:59');
-    
-    // Set initial time left
+
+    // Initial calculation
     setTimeLeft(calculateTimeLeft(targetDate));
 
-    // Update time left every second
+    // Update the countdown every second
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft(targetDate));
     }, 1000);
 
-    // Cleanup interval on component unmount
+    // Clean up the interval on component unmount
     return () => clearInterval(timer);
-  }, []);
+  }, [targetDate]);
 
   const CountdownBlock = ({ value, label }: { value: number; label: string }) => (
     <div className="flex flex-col items-center">
@@ -65,7 +68,7 @@ export function Header() {
               <CountdownBlock value={timeLeft.seconds} label="seg" />
             </>
           ) : (
-            // Render placeholder on the server
+            // Render placeholder on the server to avoid hydration mismatch
             <>
               <CountdownBlock value={0} label="dias" />
               <CountdownBlock value={0} label="horas" />
