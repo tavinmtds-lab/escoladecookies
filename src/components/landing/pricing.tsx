@@ -73,6 +73,18 @@ export function Pricing() {
                 ))}
                 </ul>
             </div>
+            <Link
+                href="https://pay.cakto.com.br/3eb7gb5_662452"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(
+                    buttonVariants({ size: 'lg' }),
+                    'w-full h-14 text-lg font-bold text-white bg-green-600 hover:bg-green-700 mt-4'
+                )}
+                >
+                <Star className="mr-2 h-5 w-5" />
+                QUERO ACESSO VITALÍCIO
+            </Link>
           </CardContent>
           <CardFooter className="flex-col gap-2 px-6 pb-6">
             <Image
