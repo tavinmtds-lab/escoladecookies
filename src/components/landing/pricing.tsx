@@ -4,6 +4,8 @@ import { Button } from '../ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../ui/card';
 import Image from 'next/image';
 import Link from 'next/link';
+import { buttonVariants } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 
 export function Pricing() {
   const features = [
@@ -73,12 +75,15 @@ export function Pricing() {
             </div>
           </CardContent>
           <CardFooter className="flex-col gap-2 px-6 pb-6">
-            <Button size="lg" className="w-full font-bold h-14 text-lg bg-green-600 hover:bg-green-700" asChild>
-                <Link href="https://pay.cakto.com.br/3eb7gb5_662452" target="_blank" rel="noopener noreferrer">
-                  <Sparkles className="mr-2 h-5 w-5" />
-                  QUERO ACESSO VITALÍCIO
-                </Link>
-              </Button>
+             <Link 
+                href="https://pay.cakto.com.br/3eb7gb5_662452" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className={cn(buttonVariants({ size: 'lg' }), "w-full font-bold h-14 text-lg bg-green-600 hover:bg-green-700")}
+              >
+                <Sparkles className="mr-2 h-5 w-5" />
+                QUERO ACESSO VITALÍCIO
+              </Link>
             <Image
               src="https://i.imgur.com/jZOUmvI.png"
               alt="Compra segura e garantia"
