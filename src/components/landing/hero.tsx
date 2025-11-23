@@ -53,7 +53,7 @@ export function Hero() {
               height={50}
               className="mt-6"
             />
-            {isClient && (
+            {isClient ? (
               <p className="mt-6 text-lg font-montserrat font-bold" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.5)', color: 'hsl(var(--primary-foreground))' }}>
                 Já somos mais de{' '}
                 <span className="relative inline-block">
@@ -62,7 +62,7 @@ export function Hero() {
                 </span>
                 , só falta VOCÊ!
               </p>
-            )}
+            ) : <div className="mt-6 h-7 w-96"></div>}
             <Button
               asChild
               size="lg"
@@ -111,7 +111,7 @@ export function Hero() {
               height={50}
               className="mt-6"
             />
-            {isClient && (
+            {isClient ? (
               <p className="mt-4 text-lg text-center font-montserrat font-bold" style={{ color: '#4A3B36' }}>
                 Já somos mais de{' '}
                 <span className="relative inline-block">
@@ -120,7 +120,7 @@ export function Hero() {
                 </span>
                 , só falta VOCÊ!
               </p>
-            )}
+            ) : <div className="mt-4 h-14 w-64"></div>}
             <Button
               asChild
               size="lg"

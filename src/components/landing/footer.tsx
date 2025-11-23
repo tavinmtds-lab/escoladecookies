@@ -7,7 +7,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 
 export function Footer() {
-    const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+    const [currentYear, setCurrentYear] = useState<number | null>(null);
 
     useEffect(() => {
         setCurrentYear(new Date().getFullYear());
@@ -30,7 +30,9 @@ export function Footer() {
                 height={45}
                 className="mt-4"
             />
-            <p className="text-sm mt-8">&copy; {currentYear} Escola de Cookies – <b>Todos os direitos reservados</b>.</p>
+            {currentYear ? (
+              <p className="text-sm mt-8">&copy; {currentYear} Escola de Cookies – <b>Todos os direitos reservados</b>.</p>
+            ) : <div className="h-5 w-80 mt-8"></div>}
             <div className="flex justify-center gap-4 mt-2 text-xs opacity-70">
                 <span>Compra 100% Segura</span>
                 <span>|</span>
