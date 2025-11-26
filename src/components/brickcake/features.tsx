@@ -205,6 +205,9 @@ export function BrickcakeFeatures() {
               <p className="text-5xl sm:text-6xl font-extrabold text-black mt-1">
                 R$37
               </p>
+              <p className="text-lg font-medium text-foreground/80 mt-2">
+                ou até 9x de R$5,02 no cartão
+              </p>
               <div className="flex items-center justify-center gap-2 mt-2 text-xs text-foreground/70">
                 <span>Oferta apenas nessa página</span>
               </div>
