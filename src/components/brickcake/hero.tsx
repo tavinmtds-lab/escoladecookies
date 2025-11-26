@@ -10,7 +10,7 @@ export function BrickcakeHero() {
     <section className="bg-background py-12 sm:py-24">
       <div className="container mx-auto flex flex-col items-center text-center px-4">
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-headline mt-8 max-w-3xl text-primary" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.2)' }}>
-            Você acabou de garantir acesso às minhas receitas exclusivas do natal!
+            Você acabou de garantir acesso às minhas receitas exclusivas!
         </h1>
         <p className="mt-4 text-2xl sm:text-3xl max-w-3xl font-body text-foreground/80">
             Mas deve estar se perguntando: <b>por que ainda está nessa página, né?</b> rsrsrs
