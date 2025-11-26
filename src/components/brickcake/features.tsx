@@ -53,12 +53,12 @@ export function BrickcakeFeatures() {
            offer-type="upsell"
            upsell-reject-url="members_area"   
          >
-           Sim, quero aproveitar a oferta
+           Sim, Quero aproveitar a RECEITA SEGRETA!
          </cakto-upsell-accept>
          <cakto-upsell-reject
            upsell-reject-url="members_area"       
          >
-           Não, eu não quero aproveitar a oferta
+           Não, não quero aproveitar a RECEITA SEGRETA
          </cakto-upsell-reject>
        </cakto-upsell-buttons>  
        
