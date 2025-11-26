@@ -31,7 +31,7 @@ export function Footer() {
                 className="mt-4"
             />
             {currentYear ? (
-              <p className="text-sm mt-8">&copy; {currentYear} Escola de Cookies – <b>Todos os direitos reservados</b>.</p>
+               <p className="text-sm mt-8">&copy; {currentYear} Escola de Donuts – <b>Todos os direitos reservados</b>.</p>
             ) : <div className="h-5 w-80 mt-8"></div>}
             <div className="flex justify-center gap-4 mt-2 text-xs opacity-70">
                 <span>Compra 100% Segura</span>
