@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Script from 'next/script';
 
@@ -42,28 +43,47 @@ export function BrickcakeFeatures() {
 
   const upsellHtml = `
     <div>
-      <meta charset="UTF-8">
-      <cakto-upsell-buttons>
-         <cakto-upsell-accept
-           bg-color="#0f7865"
-           text-color="#ffffff"
-           upsell-accept-url="members_area"
-           offer-id="jawigds"
-           app-base-url="https://app.cakto.com.br"
-           offer-type="upsell"
-           upsell-reject-url="members_area"   
-         >
-           Sim, Quero aproveitar a RECEITA SEGRETA!
-         </cakto-upsell-accept>
-         <cakto-upsell-reject
-           upsell-reject-url="members_area"       
-         >
-           Não, não quero aproveitar a RECEITA SEGRETA
-         </cakto-upsell-reject>
-       </cakto-upsell-buttons>  
-       
-       <script type="text/javascript" src="https://caktoscripts.nyc3.cdn.digitaloceanspaces.com/upsell.js"><\/script>
-    </div>
+ <meta charset="UTF-8">
+   <cakto-upsell-buttons>
+      <cakto-upsell-accept
+        bg-color="#0f7865"
+        text-color="#ffffff"
+        upsell-accept-url="members_area"
+        offer-id="jawigds"
+        app-base-url="https://app.cakto.com.br"
+        offer-type="upsell"
+        upsell-reject-url="members_area"   
+      >
+        Sim, Quero aproveitar a RECEITA SEGRETA!
+      </cakto-upsell-accept>
+      <cakto-upsell-reject
+        upsell-reject-url="members_area"       
+      >
+        Não, não quero aproveitar a RECEITA SEGRETA
+      </cakto-upsell-reject>
+    </cakto-upsell-buttons>  
+    
+
+     <!-- Descomente o código abaixo para estilzar o css dos botões -->
+      <!-- <style>
+          /* Botão de aceitar upsell */
+          cakto-upsell-accept::part(button) {
+              background-color: red;
+              color: white;
+              /* Ajuste do tamanho do botão 
+              Descomente o código abaixo para definir um tamanho customizado para o botão */
+              /* width: 100vw; */
+          }
+
+          /* Botão de rejeitar upsell */
+          cakto-upsell-reject::part(button) {
+              background-color: blue;
+              color: white;
+          }
+      </style> -->
+
+  <script type="text/javascript" src="https://caktoscripts.nyc3.cdn.digitaloceanspaces.com/upsell.js"><\/script>
+ </div>
   `;
 
   return (
@@ -203,9 +223,9 @@ export function BrickcakeFeatures() {
                 💰De <span className="line-through">R$147,90</span> por
               </p>
               <p className="text-5xl sm:text-6xl font-extrabold text-black mt-1">
-                R$37
+                R$37,90
               </p>
-              <p className="text-lg font-bold text-[#39ff14] mt-2">
+              <p className="text-lg font-bold text-foreground/90 mt-2">
                 ou até 9x de R$5,14 no cartão
               </p>
               <div className="flex items-center justify-center gap-2 mt-2 text-xs text-foreground/70">
