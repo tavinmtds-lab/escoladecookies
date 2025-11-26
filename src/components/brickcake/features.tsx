@@ -235,7 +235,7 @@ export function BrickcakeFeatures() {
 
             <div dangerouslySetInnerHTML={{ __html: upsellHtml }} />
             
-            <p className="mt-2 text-xs text-foreground/60">
+            <p className="mt-2 text-xs text-[#16A34A]">
               Pagamento único, acesso vitalício.
             </p>
           </div>
