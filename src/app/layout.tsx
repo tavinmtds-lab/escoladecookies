@@ -4,6 +4,7 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
 import Script from 'next/script';
+import { Suspense } from 'react';
 
 export const metadata: Metadata = {
   title: 'Escola de Cookies',
@@ -40,23 +41,23 @@ export default function RootLayout({
   return (
     <html lang="pt-br" suppressHydrationWarning>
       <head>
-        <Script id="utmify-pixel-config" strategy="afterInteractive">
+        <Script id="meta-pixel" strategy="afterInteractive">
           {`
-            window.pixelId = "69227825044f8767fa1a8fc0";
-            var a = document.createElement("script");
-            a.setAttribute("async", "");
-            a.setAttribute("defer", "");
-            a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
-            document.head.appendChild(a);
+            !function (f, b, e, v, n, t, s) {
+                if (f.fbq) return; n = f.fbq = function () {
+                    n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                };
+                if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+                n.queue = []; t = b.createElement(e); t.async = !0;
+                t.src = v; s = b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t, s)
+            }(window, document, 'script',
+                'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '838772922232131');
+            fbq('track', 'PageView');
           `}
         </Script>
-        <Script
-          src="https://cdn.utmify.com.br/scripts/utms/latest.js"
-          data-utmify-prevent-xcod-sck
-          data-utmify-prevent-subids
-          async
-          defer
-        ></Script>
         <Script id="clarity-pixel" strategy="afterInteractive">
           {`
             (function(c,l,a,r,i,t,y){
@@ -68,6 +69,12 @@ export default function RootLayout({
         </Script>
       </head>
       <body className={cn("font-body antialiased", poppins.variable, playfairDisplay.variable, montserrat.variable)}>
+        <Suspense fallback={null}>
+            <noscript>
+                <img height="1" width="1" style={{ display: 'none' }}
+                     src="https://www.facebook.com/tr?id=838772922232131&ev=PageView&noscript=1" />
+            </noscript>
+        </Suspense>
         {children}
         <Toaster />
       </body>
