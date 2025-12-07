@@ -76,7 +76,7 @@ export function Pricing() {
                 </ul>
             </div>
             <a
-              href="https://escoladecookies.mycartpanda.com/checkout"
+              href="https://escoladecookies.mycartpanda.com/checkout/204188261:1"
               target="_blank"
               rel="noopener noreferrer"
               className={cn(
