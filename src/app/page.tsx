@@ -8,6 +8,7 @@ import { Header } from '@/components/landing/header';
 import { Hero } from '@/components/landing/hero';
 import { Footer } from '@/components/landing/footer';
 import { Skeleton } from '@/components/ui/skeleton';
+import { Gallery } from '@/components/landing/gallery';
 
 const SectionSkeleton = () => (
   <div className="container mx-auto py-12 sm:py-24 px-4">
@@ -22,7 +23,6 @@ const SectionSkeleton = () => (
 );
 
 const componentConfig = [
-  { ref: 'gallery', Component: dynamic(() => import('@/components/landing/gallery').then(mod => mod.Gallery)) },
   { ref: 'testimonials', Component: dynamic(() => import('@/components/landing/testimonials').then(mod => mod.Testimonials)) },
   { ref: 'faq', Component: dynamic(() => import('@/components/landing/faq').then(mod => mod.FAQ)) },
   { ref: 'pricing', Component: dynamic(() => import('@/components/landing/pricing').then(mod => mod.Pricing)) },
@@ -49,6 +49,9 @@ export default function CrochetPage() {
       <Header />
       <main>
         <Hero />
+        <AnimatedSection>
+          <Gallery />
+        </AnimatedSection>
         {componentConfig.map(({ ref, Component }) => (
           <Suspense key={ref} fallback={<SectionSkeleton />}>
             <AnimatedSection>
