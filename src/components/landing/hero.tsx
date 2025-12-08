@@ -68,7 +68,7 @@ export function Hero() {
               size="lg"
               className="mt-8 h-14 text-lg font-bold text-white bg-green-600 hover:bg-green-700"
             >
-              <a href="https://escoladecookies.mycartpanda.com/checkout/204188261:1" target="_blank" rel="noopener noreferrer">
+              <a href="#oferta">
                 <Star className="mr-2 h-5 w-5" />
                 QUERO ME INSCREVER NO CURSO
               </a>
@@ -126,7 +126,7 @@ export function Hero() {
               size="lg"
               className="mt-8 w-full h-14 text-lg font-bold text-white bg-green-600 hover:bg-green-700"
             >
-              <a href="https://escoladecookies.mycartpanda.com/checkout/204188261:1" target="_blank" rel="noopener noreferrer">
+              <a href="#oferta">
                 <Star className="mr-2 h-5 w-5" />
                 QUERO ME INSCREVER NO CURSO
               </a>
