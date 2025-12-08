@@ -19,9 +19,9 @@ export function Footer() {
             <h3 className="text-2xl font-bold font-headline">Pronta para Começar sua <b>Jornada Doce?</b></h3>
             <p className="mt-2 text-primary-foreground/80">Não perca a chance de transformar simples ingredientes em um <b>negócio lucrativo e prazeroso</b>. As vagas encerram em breve!</p>
             <Button size="lg" variant="secondary" className="mt-6 h-14 text-lg" asChild>
-              <Link href="#oferta">
+              <a href="https://escoladecookies.mycartpanda.com/checkout/204188261:1" target="_blank" rel="noopener noreferrer">
                 QUERO ME INSCREVER
-              </Link>
+              </a>
             </Button>
             <Image
                 src="https://i.imgur.com/xaayq08.png"
