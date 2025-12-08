@@ -24,8 +24,7 @@ export function ExitIntentPopup() {
   // Desktop: Detect mouse leaving the viewport
   useEffect(() => {
     const handleMouseOut = (e: MouseEvent) => {
-      // If the mouse is going to the top of the window
-      if (e.clientY < 0) {
+      if (e.clientY <= 0 || e.relatedTarget === null || e.target === null) {
         showPopup();
       }
     };
@@ -37,26 +36,42 @@ export function ExitIntentPopup() {
     };
   }, [showPopup]);
   
-  // Mobile: Back-redirect logic
+  // Mobile: Back-redirect logic using history manipulation
   useEffect(() => {
+    const originalPath = window.location.pathname + window.location.search;
+    const backRedirectUrl = '#back-redirect';
+
+    // Push a new state to the history
+    history.pushState(null, '', backRedirectUrl);
+
     const handlePopState = (event: PopStateEvent) => {
       const hasBeenShown = sessionStorage.getItem('exitIntentShown');
-      if (!hasBeenShown) {
-        event.preventDefault();
-        sessionStorage.setItem('exitIntentShown', 'true');
-        handleRedirect();
+
+      // Check if the user is going back from our custom URL
+      if (window.location.hash === backRedirectUrl) {
+         // This state is when the user comes back to the page. We push our state again.
+         history.pushState(null, '', backRedirectUrl);
+         return;
+      }
+      
+      // If the hash is gone, it means the user pressed "back" from our pushed state.
+      if (!window.location.hash && !hasBeenShown) {
+        // Prevent the default back navigation and show the offer
+        history.pushState(null, '', backRedirectUrl);
+        showPopup();
       }
     };
 
-    // Push a new state to history to intercept the back button
-    history.pushState(null, '');
-
     window.addEventListener('popstate', handlePopState);
-    
+
     return () => {
       window.removeEventListener('popstate', handlePopState);
+      // Clean up the URL if the component is unmounted
+      if (window.location.hash === backRedirectUrl) {
+        history.back();
+      }
     };
-  }, [handleRedirect]);
+  }, [showPopup]);
 
 
   if (!isOpen) {
