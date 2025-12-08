@@ -81,7 +81,7 @@ export function Pricing() {
               rel="noopener noreferrer"
               className={cn(
                 buttonVariants({ size: 'lg' }),
-                'w-full h-14 text-lg font-bold text-white bg-green-600 hover:bg-green-700 mt-4'
+                'w-full h-14 text-lg font-bold text-white bg-[#CA2F2F] hover:bg-[#b52a2a] mt-4'
               )}
             >
               <Star className="mr-2 h-5 w-5" />
