@@ -6,8 +6,8 @@ import { Button } from '../ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../ui/card';
 import Image from 'next/image';
 import Link from 'next/link';
-import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { ParticleButton } from '../ui/particle-button';
 
 export function Pricing() {
   const features = [
@@ -75,18 +75,15 @@ export function Pricing() {
                 ))}
                 </ul>
             </div>
-            <a
+            <ParticleButton
               href="https://escoladecookies.mycartpanda.com/checkout/204188261:1"
-              target="_blank"
-              rel="noopener noreferrer"
               className={cn(
-                buttonVariants({ size: 'lg' }),
                 'w-full h-14 text-lg font-bold text-white bg-[#CA2F2F] hover:bg-[#b52a2a] mt-4'
               )}
             >
               <Star className="mr-2 h-5 w-5" />
               QUERO ACESSO VITALÍCIO
-            </a>
+            </ParticleButton>
           </CardContent>
           <CardFooter className="flex-col gap-2 px-6 pb-6">
             <Image
