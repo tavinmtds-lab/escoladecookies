@@ -24,7 +24,9 @@ export function ExitIntentPopup() {
   // Desktop: Detect mouse leaving the viewport
   useEffect(() => {
     const handleMouseOut = (e: MouseEvent) => {
-      if (e.clientY <= 0 || e.relatedTarget === null || e.target === null) {
+      // clientY <= 0 is the top of the viewport
+      // relatedTarget === null is when the mouse leaves the window
+      if (e.clientY <= 0 || e.relatedTarget === null) {
         showPopup();
       }
     };
@@ -38,38 +40,28 @@ export function ExitIntentPopup() {
   
   // Mobile: Back-redirect logic using history manipulation
   useEffect(() => {
-    const originalPath = window.location.pathname + window.location.search;
-    const backRedirectUrl = '#back-redirect';
-
-    // Push a new state to the history
-    history.pushState(null, '', backRedirectUrl);
+    // This effect runs only on the client
+    const currentPath = window.location.pathname + window.location.search;
+    // A unique state for our back-button trap
+    const historyState = { page: 'exit-intent-trap' };
+    
+    // Push a new state to the history. When the user clicks back, they'll land on this state.
+    history.pushState(history.state, '', currentPath); // Ensure we have a state to go back to
+    history.pushState(historyState, '', currentPath); // Push our trap state
 
     const handlePopState = (event: PopStateEvent) => {
-      const hasBeenShown = sessionStorage.getItem('exitIntentShown');
-
-      // Check if the user is going back from our custom URL
-      if (window.location.hash === backRedirectUrl) {
-         // This state is when the user comes back to the page. We push our state again.
-         history.pushState(null, '', backRedirectUrl);
-         return;
-      }
-      
-      // If the hash is gone, it means the user pressed "back" from our pushed state.
-      if (!window.location.hash && !hasBeenShown) {
-        // Prevent the default back navigation and show the offer
-        history.pushState(null, '', backRedirectUrl);
-        showPopup();
-      }
+       // If the state doesn't have our trap, it means the user has navigated back.
+       if (event.state?.page !== 'exit-intent-trap') {
+         showPopup();
+         // Re-push our trap state so the user has to press back again to actually leave
+         history.pushState(historyState, '', currentPath);
+       }
     };
 
     window.addEventListener('popstate', handlePopState);
 
     return () => {
       window.removeEventListener('popstate', handlePopState);
-      // Clean up the URL if the component is unmounted
-      if (window.location.hash === backRedirectUrl) {
-        history.back();
-      }
     };
   }, [showPopup]);
 
