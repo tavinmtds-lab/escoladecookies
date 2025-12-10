@@ -1,4 +1,8 @@
 
+'use client';
+
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 import React from 'react';
 import Script from 'next/script';
 
@@ -40,52 +44,7 @@ export function BrickcakeFeatures() {
       price: 'R$50',
     },
   ];
-
-  const upsellHtml = `
-    <div>
- <meta charset="UTF-8">
-   <cakto-upsell-buttons>
-      <cakto-upsell-accept
-        bg-color="#0f7865"
-        text-color="#ffffff"
-        upsell-accept-url="members_area"
-        offer-id="jawigds"
-        app-base-url="https://app.cakto.com.br"
-        offer-type="upsell"
-        upsell-reject-url="members_area"   
-      >
-        Sim, Quero aproveitar a RECEITA SEGRETA!
-      </cakto-upsell-accept>
-      <cakto-upsell-reject
-        upsell-reject-url="members_area"       
-      >
-        Não, não quero aproveitar a RECEITA SEGRETA
-      </cakto-upsell-reject>
-    </cakto-upsell-buttons>  
-    
-
-     <!-- Descomente o código abaixo para estilzar o css dos botões -->
-      <!-- <style>
-          /* Botão de aceitar upsell */
-          cakto-upsell-accept::part(button) {
-              background-color: red;
-              color: white;
-              /* Ajuste do tamanho do botão 
-              Descomente o código abaixo para definir um tamanho customizado para o botão */
-              /* width: 100vw; */
-          }
-
-          /* Botão de rejeitar upsell */
-          cakto-upsell-reject::part(button) {
-              background-color: blue;
-              color: white;
-          }
-      </style> -->
-
-  <script type="text/javascript" src="https://caktoscripts.nyc3.cdn.digitaloceanspaces.com/upsell.js"><\/script>
- </div>
-  `;
-
+  
   return (
     <>
       <section className="py-12 sm:py-24 bg-[#FFF7F5]">
@@ -233,14 +192,31 @@ export function BrickcakeFeatures() {
               </div>
             </div>
 
-            <div dangerouslySetInnerHTML={{ __html: upsellHtml }} />
+            <div className="flex flex-col items-center gap-4 w-full">
+              <Button asChild size="lg" className="h-16 w-full text-xl font-bold bg-green-600 hover:bg-green-700 animate-pulse">
+                <Link href="https://escoladecookies.mycartpanda.com/ex-ocu/next-offer/JG2bv732rP?accepted=yes">
+                  Sim, Quero aproveitar a RECEITA SEGRETA!
+                </Link>
+              </Button>
+              <Link href="https://escoladecookies.mycartpanda.com/ex-ocu/next-offer/JG2bv732rP?accepted=no" className="text-red-600 hover:underline">
+                Não, não quero aproveitar a RECEITA SEGRETA
+              </Link>
+            </div>
             
-            <p className="mt-2 text-base text-[#16A34A]">
+            <p className="mt-4 text-base text-[#16A34A]">
               Pagamento único, acesso vitalício.
             </p>
           </div>
         </div>
       </section>
+      <Script src="https://assets.mycartpanda.com/cartx-ecomm-ui-assets/js/libs/ocu-external.js" strategy="afterInteractive" />
+      <Script id="mycartpanda-ocu-init" strategy="afterInteractive">
+        {`
+          if (typeof OcuExternal !== 'undefined') {
+            new OcuExternal();
+          }
+        `}
+      </Script>
     </>
   );
 }
