@@ -23,16 +23,16 @@ export function DownsellOffer() {
               ⚠️ Última Oportunidade Exclusiva (Somente Agora)
             </h1>
 
-            <p className="mt-6 text-lg sm:text-xl text-foreground/80">
+            <p className="mt-6 text-base sm:text-xl text-foreground/80">
               Ei! Antes de você sair… resolvi fazer algo que eu nunca faço.
             </p>
-            <p className="mt-4 text-lg sm:text-xl text-foreground/80">
+            <p className="mt-4 text-base sm:text-xl text-foreground/80">
               Você recusou a oferta completa, mas não quero que perca a chance de dominar a <b>BRICK CAKE – Receita Secreta</b>, uma das receitas mais desejadas e vendáveis do momento.
             </p>
-            <p className="mt-6 text-lg sm:text-xl text-foreground/80">
-              Por isso, estou te dando uma <b>última oportunidade</b> de garantir agora por <b>51% de desconto.</b>
+            <p className="mt-6 text-base sm:text-xl text-foreground/80">
+              Por isso, estou te dando uma <b>última oportunidade</b> de garantir agora com <b>30% de desconto.</b>
               <br/>
-              Isso mesmo: o que antes era R$47, agora sai por apenas <b>R$22,90</b> — somente nesta página e somente uma vez.
+              Isso mesmo: o que antes era R$37,90, agora sai por apenas <b>R$26,53</b> — somente nesta página e somente uma vez.
             </p>
 
             <div className="my-8 text-left bg-green-50/50 p-6 rounded-lg border border-green-200">
@@ -56,14 +56,14 @@ export function DownsellOffer() {
               </ul>
             </div>
             
-            <p className="mt-6 text-lg sm:text-xl font-semibold text-red-600 animate-pulse">
+            <p className="mt-6 text-base sm:text-xl font-semibold text-red-600 animate-pulse">
               Se sair dessa página… a oferta desaparece.
             </p>
 
             <div className="mt-8">
-              <Button asChild size="lg" className="h-16 w-full text-xl font-bold bg-green-600 hover:bg-green-700 animate-pulse">
+              <Button asChild size="lg" className="h-auto py-3 w-full text-lg sm:text-xl font-bold bg-green-600 hover:bg-green-700 animate-pulse">
                 <Link href="https://escoladecookies.mycartpanda.com/ex-ocu/next-offer/JG2bv732rP?accepted=yes&variant_id=204188261">
-                  👉 Aproveite agora e garanta seu acesso com 51% OFF!
+                  👉 Aproveite agora e garanta seu acesso com 30% OFF!
                 </Link>
               </Button>
               <p className="mt-4">
