@@ -30,9 +30,6 @@ const componentConfig = [
   { ref: 'about', Component: dynamic(() => import('@/components/landing/about').then(mod => mod.About)) },
 ];
 
-const ExitIntentPopup = dynamic(() => import('@/components/landing/exit-intent-popup').then(mod => mod.ExitIntentPopup), { ssr: false });
-
-
 const AnimatedSection = ({ children }: { children: React.ReactNode }) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -64,7 +61,6 @@ export default function CrochetPage() {
         ))}
       </main>
       <Footer />
-      <ExitIntentPopup />
     </div>
   );
 }
