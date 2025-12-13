@@ -55,7 +55,7 @@ export function Pricing() {
           <CardContent className="flex flex-col items-center">
             <div className="text-center my-4">
                 <p className="text-sm text-foreground/80 font-bold">💰De <span className="line-through">R$147,90</span> por</p>
-                <p className="text-5xl font-extrabold text-foreground mt-1">R$27,90</p>
+                <p className="text-5xl font-extrabold text-foreground mt-1">R$37,90</p>
                 <div className="flex items-center justify-center gap-2 mt-2 text-xs text-foreground/70">
                     <Clock className="w-3 h-3" />
                     <span>Oferta exclusiva por tempo limitado!</span>
