@@ -179,7 +179,7 @@ export function UpsellPage() {
               </p>
               
               <p className="mt-4 text-center">
-                  <Link href="https://escoladecookies.mycartpanda.com/ex-ocu/next-offer/91jv668j5n?accepted=no" className="text-sm text-gray-500 hover:underline">
+                  <Link href="https://escoladecookies.mycartpanda.com/ex-ocu/next-offer/91jv668j5n?accepted=no" className="text-sm text-red-600 hover:underline">
                       Não, obrigado. Quero continuar sem saber meu lucro real.
                   </Link>
               </p>
