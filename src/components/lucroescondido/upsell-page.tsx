@@ -1,121 +1,155 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { CheckCircle, HelpCircle } from 'lucide-react';
+import { Check, CheckCircle, HelpCircle, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { cn } from '@/lib/utils';
 
 export function UpsellPage() {
-  const benefits = [
-    'Clareza total sobre seus custos reais.',
-    'Segurança para definir preços justos e lucrativos.',
-    'Controle total do seu lucro, doce por doce.',
-    'Fim dos prejuízos invisíveis que sabotam seu caixa.',
-    'Decisões baseadas em números, não em achismo.',
+  const painPoints = [
+    'Você vende bem, mas o dinheiro some',
+    'Tem medo de cobrar mais caro',
+    'Copia preço da concorrência',
+    'Não sabe se está tendo lucro ou prejuízo',
   ];
 
+  const finalResults = [
+    'Clareza total dos custos',
+    'Segurança ao precificar',
+    'Controle do lucro',
+    'Menos prejuízo invisível',
+  ];
+  
   const objections = [
     {
-      question: 'Não sou boa com números...',
+      question: 'Não sou boa com números.',
       answer:
-        'Não se preocupe! A planilha foi feita para ser visual e intuitiva. É só preencher os campos com as informações dos seus ingredientes. A matemática complicada fica por nossa conta.',
+        'O método foi criado para iniciantes. A planilha faz as contas.',
     },
     {
-      question: 'É muito complicado de usar?',
+      question: 'Isso é complicado?',
       answer:
-        'De jeito nenhum! O ebook te guia passo a passo. Em poucos minutos, você já estará usando a planilha como uma profissional, mesmo que nunca tenha usado uma antes.',
+        'Não. É direto, prático e pensado para o dia a dia.',
     },
     {
       question: 'Serve para quem vende pouco?',
       answer:
-        'Com certeza! Na verdade, é ainda mais importante. Começar com a precificação correta desde cedo é o que vai garantir que seu negócio cresça de forma saudável e lucrativa.',
+        'Sim. Quanto menor a produção, mais importante é precificar certo.',
     },
   ];
 
   return (
-    <section className="py-12 sm:py-16 bg-gray-50">
+    <section className="py-12 sm:py-16 bg-gray-50 font-montserrat">
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto flex flex-col items-center">
-          {/* Headline & Subheadline */}
-          <div className="text-center">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-montserrat text-primary">
-              Você Vende Muito, Mas o Lucro Não Aparece no Fim do Mês?
+        <div className="max-w-2xl mx-auto flex flex-col items-center text-center gap-10 sm:gap-12">
+          
+          {/* Block 1: Hero */}
+          <div className="w-full flex flex-col items-center gap-6">
+            <h1 className="text-3xl sm:text-4xl font-extrabold text-primary leading-tight">
+              Você não precisa vender mais.
+              <br/>
+              <span className="text-foreground">Precisa parar de perder dinheiro escondido.</span>
             </h1>
-            <p className="mt-4 text-lg sm:text-xl text-foreground/80 max-w-2xl mx-auto">
-              Descubra o <b>Lucro Escondido</b>: a ferramenta que finalmente revela
-              o ganho real por trás de cada doce que você vende.
+            <p className="text-lg sm:text-xl text-foreground/80 max-w-xl">
+              O Método Lucro Escondido revela o custo real e o lucro verdadeiro de cada cookie que você vende.
             </p>
-          </div>
-
-          {/* Emotional Connection */}
-          <div className="mt-10 w-full bg-white p-6 sm:p-8 rounded-2xl shadow-lg border border-primary/10">
-            <h2 className="text-xl sm:text-2xl font-bold text-center text-secondary">
-              Se você se identifica com isso, você está no lugar certo:
-            </h2>
-            <ul className="mt-6 space-y-3 text-left text-base sm:text-lg text-foreground/80">
-              <li className="flex items-start gap-3">
-                <CheckCircle className="h-5 w-5 text-green-500 mt-1 flex-shrink-0" />
-                <span>Vende bastante, mas sente que o dinheiro some e mal vê a cor do lucro.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="h-5 w-5 text-green-500 mt-1 flex-shrink-0" />
-                <span>Copia o preço da concorrência por medo de cobrar o valor justo pelo seu trabalho.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="h-5 w-5 text-green-500 mt-1 flex-shrink-0" />
-                <span>Não tem certeza se algumas receitas estão, na verdade, te dando prejuízo.</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Product Presentation */}
-          <div className="mt-12 text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold font-montserrat text-primary">
-              Apresentando o Kit Lucro Escondido
-            </h2>
-            <p className="mt-4 text-lg sm:text-xl text-foreground/80">
-              É um combo poderoso: um <b>ebook prático e direto</b> + uma{' '}
-              <b>planilha de precificação profissional</b>, criados
-              exclusivamente para confeiteiras como você. Chega de matemática
-              complicada e planilhas confusas.
-            </p>
-            <div className="mt-8 flex justify-center">
+            <div className="mt-2">
               <Image 
                 src="https://i.imgur.com/2WlIebs.png"
-                alt="Mockup do Ebook e Planilha Lucro Escondido"
+                alt="Capa do Método Lucro Escondido"
                 width={500}
                 height={300}
-                className="rounded-lg shadow-lg"
+                className="rounded-lg shadow-xl"
               />
             </div>
           </div>
+          
+          {/* Block 2: Identification */}
+          <div className="w-full bg-white p-6 sm:p-8 rounded-2xl shadow-lg border border-primary/10">
+             <ul className="space-y-4 text-left">
+              {painPoints.map((point, index) => (
+                <li key={index} className="flex items-center gap-3 text-base sm:text-lg text-foreground/80">
+                  <ArrowRight className="h-5 w-5 text-primary flex-shrink-0" />
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-          {/* Benefits */}
-          <div className="mt-10 w-full max-w-2xl">
-            <div className="bg-primary/5 p-6 rounded-lg border border-dashed border-primary/20">
-              <h3 className="text-xl font-bold text-center text-primary mb-4">
-                O que você ganha imediatamente:
-              </h3>
-              <ul className="space-y-3">
-                {benefits.map((benefit, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                    <span className="text-foreground/90">{benefit}</span>
-                  </li>
-                ))}
-              </ul>
+          {/* Block 3: Method Presentation */}
+          <div className="w-full flex flex-col items-center gap-8">
+            <div className="max-w-xl">
+              <h2 className="text-2xl sm:text-3xl font-bold text-primary">O processo prático de 3 passos</h2>
+              <p className="mt-2 text-lg sm:text-xl text-foreground/80">
+                Criado para revendedoras que querem vender com clareza e segurança.
+              </p>
+            </div>
+            <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+              <div className="bg-white p-5 rounded-lg border">
+                <span className="font-bold text-primary">Passo 1</span>
+                <h3 className="text-lg font-semibold mt-1">Clareza de custos</h3>
+                <p className="text-foreground/70 mt-1 text-sm">Entenda os custos invisíveis da sua receita com o ebook prático.</p>
+              </div>
+              <div className="bg-white p-5 rounded-lg border">
+                <span className="font-bold text-primary">Passo 2</span>
+                <h3 className="text-lg font-semibold mt-1">Cálculo do custo real</h3>
+                <p className="text-foreground/70 mt-1 text-sm">Aplique os números na planilha e descubra o custo por unidade.</p>
+              </div>
+              <div className="bg-white p-5 rounded-lg border">
+                <span className="font-bold text-primary">Passo 3</span>
+                <h3 className="text-lg font-semibold mt-1">Precificação segura</h3>
+                <p className="text-foreground/70 mt-1 text-sm">Defina o preço certo e enxergue o lucro antes de vender.</p>
+              </div>
             </div>
           </div>
 
-          {/* Offer & CTA */}
-          <div className="mt-12 w-full max-w-xl bg-white p-6 sm:p-8 rounded-2xl shadow-2xl border-2 border-green-500">
+          {/* Block 4: Visual Result */}
+          <div className="w-full flex flex-col items-center gap-6">
+            <Image 
+              src="https://i.imgur.com/t6A9H3p.png"
+              alt="Após aplicar o método, você terá:"
+              width={500}
+              height={85}
+            />
+            <div className="w-full max-w-md grid grid-cols-2 gap-x-6 gap-y-3 text-left">
+              {finalResults.map((result, index) => (
+                <div key={index} className="flex items-center gap-2">
+                  <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
+                  <span className="text-foreground/80">{result}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Block 5: Objection Handling */}
+          <div className="w-full space-y-4 text-left">
+            {objections.map((objection, index) => (
+              <div key={index} className="bg-white p-4 rounded-lg border">
+                <p className="font-semibold text-primary flex items-start gap-2">
+                  <HelpCircle className="h-5 w-5 mt-0.5 flex-shrink-0" />
+                  {objection.question}
+                </p>
+                <p className="mt-2 text-foreground/80 pl-7">
+                  {objection.answer}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Block 6 & 7: Offer & CTA */}
+          <div className="mt-4 w-full max-w-lg bg-white p-6 sm:p-8 rounded-2xl shadow-2xl border-2 border-green-500">
             <h3 className="text-xl sm:text-2xl font-bold text-center text-secondary">
-              Oportunidade Única (Apenas Nesta Página)
+              Oferta Especial (Apenas Agora)
             </h3>
-            <p className="mt-2 text-center text-foreground/80">
-              Você não verá esta oferta em nenhum outro lugar. Adicione o Kit
-              Lucro Escondido ao seu pedido com um preço super especial.
+            <p className="mt-3 text-center text-foreground/80">
+              Este método está disponível somente agora, com valor especial, para quem deseja vender com mais lucro e menos insegurança.
             </p>
+            <div className="mt-4 flex justify-center items-center gap-4 text-sm text-foreground/70">
+                <span className="flex items-center gap-1.5"><Check className="w-4 h-4 text-green-600" /> Acesso imediato</span>
+                <span className="flex items-center gap-1.5"><Check className="w-4 h-4 text-green-600" /> Uso ilimitado</span>
+            </div>
+
             <div className="my-6 text-center">
               <p className="text-sm text-foreground/80 font-bold">
                 De <span className="line-through">R$67,00</span> por apenas:
@@ -124,52 +158,30 @@ export function UpsellPage() {
                 R$27
               </p>
               <p className="text-base font-medium text-foreground/70 mt-1">
-                Pagamento único, acesso vitalício.
+                Pagamento único, sem mensalidades.
               </p>
             </div>
+            
             <Button
               asChild
               size="lg"
               className="h-14 w-full text-lg font-bold bg-green-600 hover:bg-green-700 animate-pulse"
             >
               <Link href="#">
-                Sim, Quero Precificar com Segurança!
+                👉 Adicionar o Método ao meu pedido
               </Link>
             </Button>
-            <div className="mt-4 flex justify-center">
-              <Image 
-                src="https://i.imgur.com/t6A9H3p.png"
-                alt="Compra Segura"
-                width={300}
-                height={50}
-              />
-            </div>
-             <p className="mt-4 text-center">
+            <p className="text-xs text-center mt-2 text-foreground/60">
+              Melhor saber seus números do que continuar no achismo.
+            </p>
+            
+            <p className="mt-4 text-center">
                 <Link href="#" className="text-sm text-gray-500 hover:underline">
                     Não, obrigado. Quero continuar sem saber meu lucro real.
                 </Link>
-              </p>
+            </p>
           </div>
 
-          {/* Objection Handling */}
-          <div className="mt-12 w-full max-w-3xl">
-            <h3 className="text-2xl font-bold text-center text-secondary mb-6">
-              Suas Dúvidas, Respondidas
-            </h3>
-            <div className="space-y-4">
-              {objections.map((objection, index) => (
-                <div key={index} className="bg-white p-4 rounded-lg border">
-                  <p className="font-semibold text-primary flex items-center gap-2">
-                    <HelpCircle className="h-5 w-5" />
-                    {objection.question}
-                  </p>
-                  <p className="mt-2 text-foreground/80 pl-7">
-                    {objection.answer}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </section>
