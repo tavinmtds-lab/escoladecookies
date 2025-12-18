@@ -3,6 +3,7 @@
 import { Button } from '@/components/ui/button';
 import { CheckCircle, HelpCircle } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export function UpsellPage() {
   const benefits = [
@@ -78,6 +79,15 @@ export function UpsellPage() {
               exclusivamente para confeiteiras como você. Chega de matemática
               complicada e planilhas confusas.
             </p>
+            <div className="mt-8 flex justify-center">
+              <Image 
+                src="https://i.imgur.com/2WlIebs.png"
+                alt="Mockup do Ebook e Planilha Lucro Escondido"
+                width={500}
+                height={300}
+                className="rounded-lg shadow-lg"
+              />
+            </div>
           </div>
 
           {/* Benefits */}
@@ -126,6 +136,14 @@ export function UpsellPage() {
                 Sim, Quero Precificar com Segurança!
               </Link>
             </Button>
+            <div className="mt-4 flex justify-center">
+              <Image 
+                src="https://i.imgur.com/t6A9H3p.png"
+                alt="Compra Segura"
+                width={300}
+                height={50}
+              />
+            </div>
              <p className="mt-4 text-center">
                 <Link href="#" className="text-sm text-gray-500 hover:underline">
                     Não, obrigado. Quero continuar sem saber meu lucro real.
