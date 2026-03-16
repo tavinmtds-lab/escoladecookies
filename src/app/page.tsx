@@ -24,6 +24,7 @@ const SectionSkeleton = () => (
 
 const componentConfig = [
   { ref: 'testimonials', Component: dynamic(() => import('@/components/landing/testimonials').then(mod => mod.Testimonials)) },
+  { ref: 'bonuses', Component: dynamic(() => import('@/components/landing/bonuses').then(mod => mod.Bonuses)) },
   { ref: 'faq', Component: dynamic(() => import('@/components/landing/faq').then(mod => mod.FAQ)) },
   { ref: 'pricing', Component: dynamic(() => import('@/components/landing/pricing').then(mod => mod.Pricing)) },
   { ref: 'guarantee', Component: dynamic(() => import('@/components/landing/guarantee').then(mod => mod.Guarantee)) },
