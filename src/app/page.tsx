@@ -1,4 +1,3 @@
-
 'use client'
 
 import dynamic from 'next/dynamic';
@@ -9,6 +8,7 @@ import { Hero } from '@/components/landing/hero';
 import { Footer } from '@/components/landing/footer';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Gallery } from '@/components/landing/gallery';
+import { MentorAI } from '@/components/landing/mentor-ai';
 
 const SectionSkeleton = () => (
   <div className="container mx-auto py-12 sm:py-24 px-4">
@@ -51,6 +51,9 @@ export default function CrochetPage() {
         <Hero />
         <AnimatedSection>
           <Gallery />
+        </AnimatedSection>
+        <AnimatedSection>
+          <MentorAI />
         </AnimatedSection>
         {componentConfig.map(({ ref, Component }) => (
           <Suspense key={ref} fallback={<SectionSkeleton />}>
