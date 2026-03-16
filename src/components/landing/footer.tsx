@@ -34,11 +34,11 @@ export function Footer() {
 
             <div className="mt-10 bg-white/10 p-4 rounded-xl backdrop-blur-sm border border-white/20">
                 <Image
-                    src="https://i.imgur.com/pXvB7wU.png"
+                    src="https://i.imgur.com/Vy6ilVA.png"
                     alt="Selos de Segurança Google e Site Blindado"
                     width={320}
                     height={60}
-                    className="brightness-0 invert opacity-90"
+                    className="opacity-100"
                     data-ai-hint="security badges"
                 />
             </div>
