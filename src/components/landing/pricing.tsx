@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Check, Star, Clock, Users, BookOpen, Gift, Shield, Sparkles, MessageCircle } from 'lucide-react';
@@ -76,7 +75,7 @@ export function Pricing() {
                 </ul>
             </div>
             <ParticleButton
-              href="https://escoladecookies.mycartpanda.com/checkout/204188261:1"
+              href="https://pay.lowify.com.br/checkout?product_id=8iIi5R"
               className={cn(
                 'w-full h-14 text-lg font-bold text-white bg-[#CA2F2F] hover:bg-[#b52a2a] mt-4'
               )}

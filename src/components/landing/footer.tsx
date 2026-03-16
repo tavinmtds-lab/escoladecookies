@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Button } from "../ui/button";
@@ -27,7 +26,7 @@ export function Footer() {
                 className="mt-10 h-16 px-12 text-xl font-bold bg-[#004D3C] hover:bg-[#003d30] text-white rounded-md shadow-xl transition-all hover:scale-105" 
                 asChild
             >
-              <a href="https://escoladecookies.mycartpanda.com/checkout/204188261:1" target="_blank" rel="noopener noreferrer">
+              <a href="https://pay.lowify.com.br/checkout?product_id=8iIi5R" target="_blank" rel="noopener noreferrer">
                 QUERO ME INSCREVER
               </a>
             </Button>
