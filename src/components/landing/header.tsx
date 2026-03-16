@@ -44,26 +44,26 @@ export function Header() {
   }, []);
 
   const TimerUnit = ({ value, label }: { value: number; label: string }) => (
-    <div className="flex flex-col items-center gap-2">
-      <div className="bg-white rounded-2xl w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 flex items-center justify-center shadow-sm border-2 border-[#E2BC9B]">
-        <span className="text-xl sm:text-2xl md:text-3xl font-bold text-[#F7887E]">
+    <div className="flex flex-col items-center gap-1 sm:gap-2">
+      <div className="bg-white rounded-xl sm:rounded-2xl w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 flex items-center justify-center shadow-md border-2 border-[#E2BC9B]">
+        <span className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#E15A4F]">
           {String(value).padStart(2, '0')}
         </span>
       </div>
-      <span className="text-[10px] sm:text-[11px] font-bold text-[#E2BC9B] uppercase tracking-widest">
+      <span className="text-[11px] sm:text-xs md:text-sm font-black text-[#8B6E5A] uppercase tracking-tighter sm:tracking-widest">
         {label}
       </span>
     </div>
   );
 
   return (
-    <header className="bg-[#FAF7F2] border-b border-[#E8DFD5] py-6 px-4 sm:px-6 relative shadow-sm">
-      <div className="container mx-auto flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12">
-        <p className="font-headline italic text-[#F7887E] text-2xl sm:text-3xl md:text-4xl text-center leading-tight">
+    <header className="bg-[#FAF7F2] border-b border-[#E8DFD5] py-8 px-4 sm:px-6 relative shadow-sm">
+      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16">
+        <p className="font-headline italic text-[#E15A4F] text-3xl sm:text-4xl md:text-5xl text-center leading-tight font-bold">
           Inscrições abertas até dia 21 de março
         </p>
         
-        <div className="flex items-center gap-3 sm:gap-4 md:gap-6">
+        <div className="flex items-center gap-2 sm:gap-4 md:gap-6">
           <TimerUnit value={timeLeft.days} label="Dias" />
           <TimerUnit value={timeLeft.hours} label="Horas" />
           <TimerUnit value={timeLeft.minutes} label="Minutos" />
