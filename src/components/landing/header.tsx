@@ -17,12 +17,13 @@ export function Header() {
     
     const calculateTimeLeft = () => {
       const now = new Date();
-      // Define a data alvo para 21 de Março (Mês 2 no JS, pois começa em 0)
-      let targetDate = new Date(now.getFullYear(), 2, 21, 23, 59, 59);
+      // Define a data alvo para 21 de Março
+      const currentYear = now.getFullYear();
+      let targetDate = new Date(currentYear, 2, 21, 23, 59, 59); // Mês 2 é Março (0-indexed)
 
       // Se a data já passou este ano, define para o próximo ano
       if (now > targetDate) {
-        targetDate = new Date(now.getFullYear() + 1, 2, 21, 23, 59, 59);
+        targetDate = new Date(currentYear + 1, 2, 21, 23, 59, 59);
       }
 
       const difference = targetDate.getTime() - now.getTime();
@@ -43,47 +44,31 @@ export function Header() {
     return () => clearInterval(timer);
   }, []);
 
-  // Versão estática para o servidor/hidratação inicial
-  if (!mounted) {
-    return (
-      <header className="bg-secondary text-secondary-foreground py-2 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto text-center">
-          <p className="text-sm sm:text-base font-bold uppercase tracking-tight">
-            Inscrições abertas até dia 21 de Março
-          </p>
-        </div>
-      </header>
-    );
-  }
+  const TimerUnit = ({ value, label }: { value: number; label: string }) => (
+    <div className="flex flex-col items-center gap-1">
+      <div className="bg-[#F8F1EA] rounded-xl w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center shadow-sm border border-[#E8DFD5]">
+        <span className="text-xl sm:text-2xl font-bold text-[#A67C52]">
+          {String(value).padStart(2, '0')}
+        </span>
+      </div>
+      <span className="text-[9px] sm:text-[10px] font-bold text-[#A67C52]/80 uppercase tracking-widest">
+        {label}
+      </span>
+    </div>
+  );
 
   return (
-    <header className="bg-secondary text-secondary-foreground py-2 px-4 sm:px-6 lg:px-8 sticky top-0 z-50 shadow-lg">
-      <div className="container mx-auto flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
-        <p className="font-bold text-sm sm:text-base uppercase tracking-wider flex items-center gap-2">
-          <span className="animate-pulse inline-block w-2 h-2 rounded-full bg-red-500"></span>
-          Inscrições abertas até dia 21 de Março
+    <header className="bg-[#FAF7F2] border-b border-[#E8DFD5] py-4 px-4 sm:px-6 sticky top-0 z-50 shadow-sm">
+      <div className="container mx-auto flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12">
+        <p className="font-headline italic text-[#A67C52] text-lg sm:text-2xl text-center">
+          Inscrições abertas até dia 21 de março
         </p>
         
-        <div className="flex items-center gap-3 sm:gap-4 font-mono">
-          <div className="flex flex-col items-center bg-black/20 rounded px-2 py-1 min-w-[44px] border border-white/10 shadow-inner">
-            <span className="text-lg font-black leading-none">{timeLeft.days}</span>
-            <span className="text-[8px] font-bold opacity-70 uppercase">Dias</span>
-          </div>
-          <span className="text-lg font-bold opacity-50">:</span>
-          <div className="flex flex-col items-center bg-black/20 rounded px-2 py-1 min-w-[44px] border border-white/10 shadow-inner">
-            <span className="text-lg font-black leading-none">{String(timeLeft.hours).padStart(2, '0')}</span>
-            <span className="text-[8px] font-bold opacity-70 uppercase">Horas</span>
-          </div>
-          <span className="text-lg font-bold opacity-50">:</span>
-          <div className="flex flex-col items-center bg-black/20 rounded px-2 py-1 min-w-[44px] border border-white/10 shadow-inner">
-            <span className="text-lg font-black leading-none">{String(timeLeft.minutes).padStart(2, '0')}</span>
-            <span className="text-[8px] font-bold opacity-70 uppercase">Min</span>
-          </div>
-          <span className="text-lg font-bold opacity-50">:</span>
-          <div className="flex flex-col items-center bg-black/20 rounded px-2 py-1 min-w-[44px] border border-white/10 shadow-inner">
-            <span className="text-lg font-black leading-none">{String(timeLeft.seconds).padStart(2, '0')}</span>
-            <span className="text-[8px] font-bold opacity-70 uppercase">Seg</span>
-          </div>
+        <div className="flex items-center gap-3 sm:gap-4">
+          <TimerUnit value={timeLeft.days} label="Dias" />
+          <TimerUnit value={timeLeft.hours} label="Horas" />
+          <TimerUnit value={timeLeft.minutes} label="Minutos" />
+          <TimerUnit value={timeLeft.seconds} label="Segundos" />
         </div>
       </div>
     </header>
