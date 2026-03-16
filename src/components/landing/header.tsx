@@ -45,25 +45,25 @@ export function Header() {
 
   const TimerUnit = ({ value, label }: { value: number; label: string }) => (
     <div className="flex flex-col items-center gap-2">
-      <div className="bg-[#F8F1EA] rounded-2xl w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 flex items-center justify-center shadow-lg border-2 border-[#E8DFD5]">
-        <span className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#A67C52]">
+      <div className="bg-white rounded-2xl w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 flex items-center justify-center shadow-md border-2 border-[#E2BC9B]">
+        <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#F7887E]">
           {String(value).padStart(2, '0')}
         </span>
       </div>
-      <span className="text-[12px] sm:text-sm font-extrabold text-[#A67C52]/90 uppercase tracking-[0.2em]">
+      <span className="text-[10px] sm:text-[12px] font-bold text-[#E2BC9B] uppercase tracking-widest">
         {label}
       </span>
     </div>
   );
 
   return (
-    <header className="bg-[#FAF7F2] border-b border-[#E8DFD5] py-10 px-4 sm:px-6 relative shadow-sm">
-      <div className="container mx-auto flex flex-col items-center justify-center gap-10 md:gap-16">
-        <p className="font-headline italic text-[#A67C52] text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center leading-tight">
+    <header className="bg-[#FAF7F2] border-b border-[#E8DFD5] py-8 px-4 sm:px-6 relative shadow-sm">
+      <div className="container mx-auto flex flex-col items-center justify-center gap-6 md:gap-8">
+        <p className="font-headline italic text-[#F7887E] text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center leading-tight">
           Inscrições abertas até dia 21 de março
         </p>
         
-        <div className="flex items-center gap-6 sm:gap-10 md:gap-12">
+        <div className="flex items-center gap-4 sm:gap-6 md:gap-8">
           <TimerUnit value={timeLeft.days} label="Dias" />
           <TimerUnit value={timeLeft.hours} label="Horas" />
           <TimerUnit value={timeLeft.minutes} label="Minutos" />
