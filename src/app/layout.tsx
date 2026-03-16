@@ -10,6 +10,9 @@ import { Suspense } from 'react';
 export const metadata: Metadata = {
   title: 'Escola de Cookies',
   description: 'Aprenda a fazer Cookies deliciosos e vendáveis na sua própria cozinha!',
+  icons: {
+    icon: 'https://i.imgur.com/6fh1p5Z.jpeg',
+  },
 };
 
 const poppins = Poppins({
